@@ -16,7 +16,8 @@ You are free to change the domain an port settings in buildout.cfg before runnin
 Buildout
 ========
 
-Buildout must not be run as root, as postgresql won't start with root privileges.
+Buildout must not be run as root, as postgresql won't start with root privileges::
+    
     mkdir downloads
     python bootstrap.py
     ./bin/buildout -v
@@ -25,7 +26,7 @@ Buildout must not be run as root, as postgresql won't start with root privileges
 Django Dance
 ============
 
-After running buildout execute following command, to create DB
+After running buildout execute following command, to create DB::
 
     ./bin/manage.py syncdb
     ./bin/manage.py migrate
@@ -34,7 +35,8 @@ After running buildout execute following command, to create DB
 Let's go Pypi with Vegetables
 ==============================
 
-Now we want to start downloading and start our celery workers
+Now we want to start downloading and start our celery workers::
+    
     ./bin/manage.py celeryd -c 4 -l info
     ./bin/manage.py trigger_bulk_sync
 
@@ -43,12 +45,12 @@ This starts 4 celery worker, with additional information, and creates an Queue E
 All about Monitoring
 ====================
 
-With Supervisord (settings in buildout.cfg) you can watch/restar/stop your services, by a simple webinterface
+With Supervisord (settings in buildout.cfg) you can watch/restart/stop your services, by a simple webinterface
 
 ElasticSearch
 =============
 
-to find our entries/packages by crate.io webinterface we have to index the packes by running:
+to find our entries/packages by crate.io webinterface we have to index the packes by running::
 
     ./bin/manage.py rebuild_index
 
