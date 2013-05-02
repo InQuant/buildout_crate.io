@@ -45,7 +45,11 @@ This starts 4 celery worker, with additional information, and creates an Queue E
 All about Monitoring
 ====================
 
-With Supervisord (settings in buildout.cfg) you can watch/restart/stop your services, by a simple webinterface
+With Supervisord (settings in buildout.cfg) you can watch/restart/stop your services, by a simple webinterface::
+
+    ./bin/supervisord
+
+After that you can acces SuperVisor Webinterface, or use **supervisorctl**
 
 ElasticSearch
 =============
